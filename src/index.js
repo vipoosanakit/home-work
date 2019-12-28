@@ -24,7 +24,7 @@ class App extends React.Component {
                     }
                 </div>
                 <div>
-                    <ItemPagination />
+                    <ItemPagination pages={2}/>
                 </div>
                 <hr />
             </div>

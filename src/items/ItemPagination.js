@@ -1,17 +1,43 @@
 import React from 'react';
 import './ItemPagination.css';
 
-const ItemPagination = () => {
+class ItemPagination extends React.Component {
 
-    return (
-        <div className='item-pagination'>
-            <ul>
-                <li className='active'>1</li>
-                <li>2</li>
-                <li>></li>
-            </ul>
-        </div>
-    );
+    constructor(props) {
+        super(props);
+
+        const pageNumbers = [];
+
+        for(let i = 0 ; i < this.props.pages ; i++){
+            pageNumbers.push(i+1);
+        }
+
+        this.state = { pageNumbers };
+    }
+
+    componentWillUnmount() {
+        this.setState({ pageNumbers: [] });
+    }
+
+    renderPage() {
+        return this.state.pageNumbers.map( (pageNumber,i) => {
+            if(pageNumber === 1)
+                return <li className='active' key={i}>{pageNumber}</li>
+            else
+                return <li key={i}>{pageNumber}</li>
+        });
+    }
+
+    render() {
+        return (
+            <div className='item-pagination'>
+                <ul>
+                    {this.renderPage()}
+                    <li>></li>
+                </ul>
+            </div>
+        );
+    }
 }
 
 export default ItemPagination;

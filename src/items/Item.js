@@ -5,12 +5,15 @@ import './Item.css';
 
 const Item = (props) => {
 
-    const { id, title, vote, image_url } = props.itemDetail;
+    const { id, title, vote, image_url, price } = props.itemDetail;
     const created_at = moment(props.itemDetail.created_at).format();
-    const price = props.itemDetail.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     const getDiffInWeek = (created_date) => {
         return moment().diff(created_date, 'week');
+    }
+
+    const getDisplayPrice = (price) => {
+        return parseFloat(price).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     return (
@@ -30,7 +33,7 @@ const Item = (props) => {
                 className='start-ratings'
             />
             <br/>
-            <div className = 'item-price'>${price}</div>
+            <div className = 'item-price'>${getDisplayPrice(price)}</div>
         </div>
     );
 }
