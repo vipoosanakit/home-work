@@ -1,0 +1,10 @@
+.item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 30px;
+    grid-auto-rows: 400px;
+}
+
+.item-count {
+    margin-bottom: 20px;
+}

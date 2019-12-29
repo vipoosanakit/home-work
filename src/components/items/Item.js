@@ -20,9 +20,9 @@ const Item = (props) => {
         <div key={id} className="item-card">
             <img alt = '' src = {image_url} />
             <br/>
-            <div className = 'item-text'>{title}</div>
+            <div className = 'item-title'>{title}</div>
             <br />
-            <div className = 'item-text'>{ getDiffInWeek(created_at) } weeks ago</div>
+            <div className = 'item-created-date'>{ getDiffInWeek(created_at) } weeks ago</div>
             <br/>
             <StarRatings
                 rating={vote}

@@ -1,12 +1,6 @@
 .item-card {
-    width: 300px;
-    height: 420px;
-    overflow: hidden;
-    float: left;
-    /* position: relative; */
-    margin: 10px;
+    width: 250px;
     padding: 10px;
-    display: block;
 }
 
 .item-card:hover {
@@ -14,15 +8,19 @@
   }
 
 img {
-    width: 300px;
+    width: 250px;
     height: auto;
     overflow: hidden;
     margin-bottom: 30px;
 }
 
-.item-text {
+.item-title, .item-created-date {
     height: 15px;
     margin-bottom: 5px;
+}
+
+.item-title {
+    font-size: 13px;
 }
 
 div {
